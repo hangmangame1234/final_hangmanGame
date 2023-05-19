@@ -7,6 +7,8 @@ class WordGuessGame {
   }
 
   startGame() {
+    const startButton = document.getElementById("start-button");
+    startButton.addEventListener("click", this.startGame.bind(this));
     this.selectedWord = this.getRandomWord();
     this.displayWordBlank();
     this.bindEvents();
@@ -82,5 +84,6 @@ class WordGuessGame {
     resultElement.innerText = result;
   }
 }
+
 const game = new WordGuessGame();
 game.startGame();
