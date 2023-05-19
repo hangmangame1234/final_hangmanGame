@@ -9,6 +9,7 @@
       <p id="word-blank"></p>
       <input type="text" id="guess-input" placeholder="알파벳 입력" />
       <button id="guess-button">입력</button>
+      <button id="start-button">게임시작</button>
       <p id="guesses"></p>
       <p id="result"></p>
     </div>
@@ -23,6 +24,8 @@
         }
 
         startGame() {
+          const startButton = document.getElementById("start-button");
+          startButton.addEventListener("click", this.startGame.bind(this));
           this.selectedWord = this.getRandomWord();
           this.displayWordBlank();
           this.bindEvents();
