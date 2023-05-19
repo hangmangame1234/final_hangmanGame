@@ -1,6 +1,20 @@
 class WordGuessGame {
   constructor() {
-    this.words = ["apple", "banana", "cherry", "date", "elderberry"];
+    this.words = [
+      "dongbin",
+      "hyeji",
+      "jaehyung",
+      "sungyeon",
+      "sungi",
+      "taegyeong",
+      "seokjun",
+      "yeonghoon",
+      "jibin",
+      "seokho",
+      "hyeonwoo",
+      "gangwoo",
+      "taewook",
+    ];
     this.selectedWord = "";
     this.guessesRemaining = 10;
     this.guessedLetters = [];
@@ -18,7 +32,7 @@ class WordGuessGame {
 
   displayWordBlank() {
     const wordBlank = document.getElementById("word-blank");
-    wordBlank.innerText = "_".repeat(this.selectedWord.length);
+    wordBlank.innerText = "■".repeat(this.selectedWord.length);
   }
 
   bindEvents() {
@@ -47,11 +61,19 @@ class WordGuessGame {
     this.updateWordBlank();
 
     if (this.checkWin()) {
-      this.displayResult("성공");
+      this.displayResult(this.selectedWord);
+      setTimeout(() => {
+        alert("성공! 다시시작?");
+        location.reload();
+      }, 500);
     } else {
       this.guessesRemaining--;
       if (this.guessesRemaining === 0) {
         this.displayResult("실패");
+        setTimeout(() => {
+          alert("바보!");
+          location.reload();
+        }, 500);
       }
     }
 
@@ -66,7 +88,7 @@ class WordGuessGame {
   updateWordBlank() {
     const wordBlank = document.getElementById("word-blank");
     const newWordBlank = [...this.selectedWord]
-      .map((letter) => (this.guessedLetters.includes(letter) ? letter : "_"))
+      .map((letter) => (this.guessedLetters.includes(letter) ? letter : "■"))
       .join("");
     wordBlank.innerText = newWordBlank;
   }

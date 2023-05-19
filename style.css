@@ -1,0 +1,33 @@
+#word-container {
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 8rem;
+    background-color: skyblue;
+    text-align: center;
+    border-radius:50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+#input-box {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+button {
+    border: none;
+    background-color:black;
+    color: white;
+    width: 20%;
+    border-radius:20px;
+    cursor: pointer;
+}
+
+#word-blank {
+    letter-spacing: 5px;
+}
+#guess-input{
+    border:none;
+}
