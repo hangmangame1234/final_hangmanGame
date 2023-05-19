@@ -32,7 +32,7 @@ class WordGuessGame {
 
   displayWordBlank() {
     const wordBlank = document.getElementById("word-blank");
-    wordBlank.innerText = "■".repeat(this.selectedWord.length);
+    wordBlank.innerText = "□".repeat(this.selectedWord.length);
   }
 
   bindEvents() {
@@ -88,7 +88,7 @@ class WordGuessGame {
   updateWordBlank() {
     const wordBlank = document.getElementById("word-blank");
     const newWordBlank = [...this.selectedWord]
-      .map((letter) => (this.guessedLetters.includes(letter) ? letter : "■"))
+      .map((letter) => (this.guessedLetters.includes(letter) ? letter : "□"))
       .join("");
     wordBlank.innerText = newWordBlank;
   }
